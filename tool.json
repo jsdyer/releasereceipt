@@ -9,13 +9,30 @@
     "economic data",
     "revisions"
   ],
-  "icon": "receipt",
+  "icon": "receipt-text",
   "url": "/releasereceipt/",
   "source": "https://github.com/jsdyer/releasereceipt",
   "hosting": "project",
   "access": "browser",
   "data_info": {
     "mode": "snapshot",
-    "detail": "Statistics Canada’s archived monthly GDP tables show what each release reported for the same month."
+    "detail": "Statistics Canada’s archived monthly GDP tables show what each release reported for the same month.",
+    "cadence": "Twice weekly",
+    "probes": [
+      {
+        "label": "Sources checked",
+        "url": "https://coolcode.ca/releasereceipt/receipts.json",
+        "path": [
+          "checked"
+        ],
+        "count_at": {
+          "path": [
+            "releases"
+          ],
+          "measure": "length",
+          "unit": "release bulletins"
+        }
+      }
+    ]
   }
 }
