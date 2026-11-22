@@ -6,8 +6,8 @@ on:
   workflow_dispatch:
     inputs:
       version:
-        description: 'New version, e.g. 2026.11.22.1 (leave blank for dataset-version.txt)'
-        required: false
+        description: 'Unused version (YYYY.MM.DD or YYYY.MM.DD.N, for example 2026.11.22.1)'
+        required: true
 permissions:
   contents: write
 jobs:
@@ -32,11 +32,23 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           VERSION: ${{ inputs.version }}
         run: |
-          version="${VERSION:-$(cat dataset-version.txt)}"
-          [[ "$version" =~ ^20[0-9]{2}\.[0-9]{2}\.[0-9]{2}(\.[0-9]+)?$ ]]
+          version="$VERSION"
+          if [[ "$GITHUB_EVENT_NAME" == push ]]; then
+            version="$(cat dataset-version.txt)"
+          fi
+          if [[ ! "$version" =~ ^20[0-9]{2}\.[0-9]{2}\.[0-9]{2}(\.[0-9]+)?$ ]]; then
+            echo "::error::Enter an unused version in YYYY.MM.DD or YYYY.MM.DD.N format."
+            exit 1
+          fi
           tag="dataset-$version"
           if gh release view "$tag" >/dev/null 2>&1; then
-            echo "Version already published. Use a new version to publish changed observations."
+            if [[ "$GITHUB_EVENT_NAME" == workflow_dispatch ]]; then
+              echo "::error::Release $tag already exists. Choose Run workflow on main and enter a new version."
+              echo "No new release was created. Start a new run with an unused version." >> "$GITHUB_STEP_SUMMARY"
+              exit 1
+            fi
+            echo "Release $tag already exists. This push has already been published." >> "$GITHUB_STEP_SUMMARY"
             exit 0
           fi
           gh release create "$tag" release-receipt-dataset.zip --target "$GITHUB_SHA" --title "Release Receipt dataset · $version" --notes "Canadian GDP publication history. The bundle contains the tidy CSV, source-linked JSON, checksums, data dictionary and source licence."
+          echo "Published [$tag]($GITHUB_SERVER_URL/$GITHUB_REPOSITORY/releases/tag/$tag) on GitHub. Check the connected repository in Zenodo for the DOI." >> "$GITHUB_STEP_SUMMARY"
