@@ -1,0 +1,17 @@
+name: Verify Statistics Canada source adapter
+on:
+  push:
+    branches: [main]
+    paths: [scripts/refresh.py, .github/workflows/source-check.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - run: python3 scripts/refresh.py

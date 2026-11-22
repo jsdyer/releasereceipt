@@ -1,6 +1,7 @@
 """Update the saved archive from Statistics Canada's monthly GDP-by-industry releases."""
 from calendar import month_name
 from datetime import date
+from html import unescape
 from html.parser import HTMLParser
 import json
 from pathlib import Path
@@ -104,7 +105,8 @@ def matching_link(page, pattern, base):
 def latest_article():
     # The main table's source release date identifies the day's edition of The Daily.
     html = fetch(INDICATOR)
-    match = re.search(r"Release date:\s*(?:<[^>]+>\s*)*(20\d\d-\d\d-\d\d)", html, re.I)
+    text = tidy(unescape(re.sub("<[^>]+>", " ", html)))
+    match = re.search(r"Release date:\s*(20\d\d-\d\d-\d\d)", text, re.I)
     if not match:
         raise ValueError("The indicator table's release date could not be read")
     code = date.fromisoformat(match[1]).strftime("%y%m%d")
@@ -162,6 +164,10 @@ def main():
     saved = json.loads(FILE.read_text())
     releases = saved["releases"] + collect(saved["releases"], latest_article())
     validate(releases)
+    newest = releases[-1]
+    current = series_from_table(fetch(newest["table"]), newest["month"])
+    if current != newest["series"]:
+        raise ValueError(f"Saved source values differ from the archived table for {newest['published']}; review the correction before replacing the archive")
     snapshot = {"checked": date.today().isoformat(), "releases": releases}
     tmp = FILE.with_suffix(".tmp")
     tmp.write_text(json.dumps(snapshot, indent=2, ensure_ascii=False)+"\n", encoding="utf-8")
