@@ -42,9 +42,11 @@ python3 -m http.server --directory dist
 
 ## Publishing a citable snapshot
 
-Open Actions → **Publish dataset release** → **Run workflow** on main. Enter a new version such as `2026.11.22.1`, or commit a new date-based version in `dataset-version.txt`. GitHub creates the matching `dataset-<version>` tag and attaches a ZIP containing CSV, JSON, source licence, this dictionary and SHA-256 checksums. An existing release stays intact.
+Open [Publish dataset release](https://github.com/jsdyer/releasereceipt/actions/workflows/dataset-release.yml), click **Run workflow**, select **main**, and enter an unused version such as `2026.11.22.1`. Supply only the version number. If the version already exists, the manual run explains the collision and stops. Start a fresh run to choose a different version. Pushing a new version in `dataset-version.txt` also publishes it. Repeat pushes of an existing version leave that release intact.
 
-To mint DOIs for future versions, sign in at [Zenodo's GitHub settings](https://zenodo.org/account/settings/github/), sync repositories and enable **jsdyer/releasereceipt** before publishing a new GitHub release. Zenodo archives the tagged repository with the data under `web/`. Its resource type, attribution and licence are set by `.zenodo.json`. Inspect the resulting record for the assigned DOI. The HTML explorer also publishes Schema.org Dataset metadata with direct CSV and JSON distributions for dataset search engines.
+A successful new release has a link in the run summary. Open it to see the matching `dataset-<version>` tag and an attached ZIP with the CSV, JSON, source licence, this dictionary and SHA-256 checksums.
+
+To mint DOIs for future versions, sign in at [Zenodo's GitHub settings](https://zenodo.org/account/settings/github/), click **Sync now**, find **jsdyer/releasereceipt**, and turn on its repository switch before publishing a new GitHub release. Zenodo archives the tagged repository with the data under `web/`. Its resource type, attribution and licence are set by `.zenodo.json`. Inspect the resulting record for the assigned DOI. The HTML explorer also publishes Schema.org Dataset metadata with direct CSV and JSON distributions for dataset search engines.
 
 ## Attribution
 
