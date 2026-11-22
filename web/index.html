@@ -1,34 +1,25 @@
 <!doctype html>
 <html lang="en-CA">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="{{DESCRIPTION}}">
-  <title>{{TITLE}} · CoolCode</title>
-  <link rel="stylesheet" href="./style.css">
-  <script type="module" src="./app.mjs"></script>
-  {{VISIT_COUNTER}}
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="{{DESCRIPTION}}"><title>{{TITLE}} · Canadian GDP revisions · CoolCode</title>
+<script type="application/ld+json">{{DATASET_METADATA}}</script>
+<link rel="canonical" href="https://coolcode.ca/releasereceipt/"><link rel="stylesheet" href="./style.css">
+<script type="module" src="./app.mjs"></script>{{VISIT_COUNTER}}
 </head>
-<body data-tool-id="{{TOOL_ID}}">
-  <a class="skip" href="#main">Skip to content</a>
-  <header><a href="https://coolcode.ca/">← CoolCode.ca</a><a href="{{SOURCE_URL}}">Source &amp; instructions ↗</a></header>
-  <main id="main">
-    <p class="eyebrow">Browser tool starter</p>
-    <h1>{{TITLE}}</h1>
-    <p class="intro">{{DESCRIPTION}}</p>
-    <section aria-labelledby="example-title">
-      <h2 id="example-title">Clean a list</h2>
-      <p>Trim spaces, skip blank lines and remove exact duplicates. Capitalization stays distinct.</p>
-      <div class="panels">
-        <div><label for="input">Your lines</label><textarea id="input" rows="10" maxlength="100000" spellcheck="false" placeholder="Paste one item per line"></textarea></div>
-        <div><label for="output">Cleaned lines</label><textarea id="output" rows="10" readonly spellcheck="false"></textarea></div>
-      </div>
-      <div class="actions"><button id="sample" type="button">Load example</button><button id="clear" type="button">Clear</button><button id="copy" type="button" hidden>Copy result</button></div>
-      <p id="status" role="status" aria-live="polite">Paste a list to begin.</p>
-      <noscript><p>This tool needs JavaScript to process your text. The source is available above.</p></noscript>
-    </section>
-    <aside aria-label="Privacy"><strong>Stays on your device.</strong> The browser processes your text in this tab. Reloading clears it.</aside>
-  </main>
-  <footer>Part of <a href="https://coolcode.ca/">the CoolCode collection</a>. {{ISSUE_LINK}}</footer>
-</body>
-</html>
+<body data-tool-id="{{TOOL_ID}}"><a class="skip" href="#main">Skip to content</a>
+<header><a href="https://coolcode.ca/">← CoolCode.ca</a><a href="{{SOURCE_URL}}">Source &amp; method ↗</a></header>
+<main id="main"><p class="eyebrow">Canadian economic accounts</p><h1>{{TITLE}}</h1><p class="intro">{{DESCRIPTION}} Select a reference month and follow the figures that readers saw as new information arrived.</p>
+<p id="status" role="status">Loading archived releases…</p>
+<section id="explorer" hidden><div class="selectors">
+<label>Industry group<select id="sector"><option value="all">All industries</option><option value="goods">Goods-producing industries</option><option value="services">Services-producing industries</option></select></label>
+<label>Reference month<select id="month"></select></label></div>
+<div class="card"><h2 id="selection"></h2><dl><div><dt>First published table</dt><dd id="first"></dd></div><div><dt>Latest archived table</dt><dd id="latest"></dd></div><div><dt>Revision</dt><dd id="difference"></dd></div></dl><p id="interpretation"></p></div>
+<h2>What each release said</h2><div class="scroll"><table><thead><tr><th>Publication date</th><th>Monthly growth</th><th>Stage</th><th>Source</th></tr></thead><tbody id="ledger"></tbody></table></div>
+<p><button id="download">Download this history (.csv)</button></p>
+<h2>Which months changed most?</h2><p>For this industry group, ordered by the absolute change between its first table and the latest table in this archive.</p><ol id="ranking"></ol>
+</section>
+<p><a href="./receipts.csv">Download all observations (.csv)</a> · <a href="./receipts.json">JSON</a> · <a href="./DATA-LICENCE.txt">Data attribution</a></p>
+<details><summary>What counts as a revision?</summary><p>Each bulletin gives six consecutive months of seasonally adjusted real GDP growth relative to the preceding month, rounded to one decimal place. The newest month is a preliminary estimate. Later tables can reflect new survey information and seasonal adjustments. A move from +0.3% to +0.4% is a revision of +0.1 percentage points.</p><p>The archive follows the regular monthly tables. Advance headline estimates and later benchmark revisions outside the six-column window are separate. Zero includes published values rounded to positive or negative zero. A missing first table means the archive starts after that month’s original release.</p></details>
+<noscript>Enable JavaScript to select months or <a href="./receipts.json">download the data as JSON</a>.</noscript></main>
+<footer>Adapted from Statistics Canada, The Daily, monthly GDP by industry. Publication dates accompany each figure. This does not constitute an endorsement by Statistics Canada. <a href="https://www.statcan.gc.ca/en/reference/licence">Statistics Canada Open Licence</a>. {{ISSUE_LINK}}</footer></body></html>

@@ -2,6 +2,7 @@
 """Build a browser tool using Python's standard library; no network required."""
 from html import escape
 import json
+from dataset import description, write_csv
 from pathlib import Path
 import re
 import shutil
@@ -71,6 +72,9 @@ def build(root=ROOT):
             if placeholder not in page:
                 raise ValueError(f"Missing template placeholder: {placeholder}")
             page = page.replace(placeholder, markup if on_coolcode else "")
+        releases = json.loads((stage / "receipts.json").read_text())["releases"]
+        write_csv(stage, releases)
+        page = page.replace("{{DATASET_METADATA}}", json.dumps(description(releases)))
         if re.search(r"\{\{[A-Z_]+\}\}", page):
             raise ValueError("Unresolved template placeholder in web/index.html")
         index.write_text(page, encoding="utf-8")

@@ -1,0 +1,421 @@
+{
+  "checked": "2026-11-22",
+  "releases": [
+    {
+      "published": "2025-10-31",
+      "month": "2025-08",
+      "article": "https://www150.statcan.gc.ca/n1/daily-quotidien/251031/dq251031a-eng.htm",
+      "table": "https://www150.statcan.gc.ca/n1/daily-quotidien/251031/t001a-eng.htm",
+      "series": {
+        "all": [
+          0.2,
+          -0.1,
+          -0.1,
+          -0.1,
+          0.3,
+          -0.3
+        ],
+        "goods": [
+          0.3,
+          -1,
+          -0.2,
+          -0.4,
+          0.8,
+          -0.6
+        ],
+        "services": [
+          0.1,
+          0.2,
+          0,
+          0.1,
+          0.1,
+          -0.1
+        ]
+      }
+    },
+    {
+      "published": "2025-11-28",
+      "month": "2025-09",
+      "article": "https://www150.statcan.gc.ca/n1/daily-quotidien/251128/dq251128b-eng.htm",
+      "table": "https://www150.statcan.gc.ca/n1/daily-quotidien/251128/t001b-eng.htm",
+      "series": {
+        "all": [
+          -0.1,
+          -0.1,
+          0,
+          0.5,
+          -0.1,
+          0.2
+        ],
+        "goods": [
+          -0.9,
+          -0.6,
+          0,
+          1.3,
+          -0.3,
+          0.6
+        ],
+        "services": [
+          0.2,
+          0,
+          0,
+          0.2,
+          0,
+          0.1
+        ]
+      }
+    },
+    {
+      "published": "2025-12-23",
+      "month": "2025-10",
+      "article": "https://www150.statcan.gc.ca/n1/daily-quotidien/251223/dq251223a-eng.htm",
+      "table": "https://www150.statcan.gc.ca/n1/daily-quotidien/251223/t001a-eng.htm",
+      "series": {
+        "all": [
+          -0.1,
+          0,
+          0.5,
+          -0.1,
+          0.2,
+          -0.3
+        ],
+        "goods": [
+          -0.5,
+          0.1,
+          1.2,
+          -0.1,
+          0.6,
+          -0.7
+        ],
+        "services": [
+          0,
+          -0.1,
+          0.3,
+          0,
+          0.1,
+          -0.2
+        ]
+      }
+    },
+    {
+      "published": "2026-01-30",
+      "month": "2025-11",
+      "article": "https://www150.statcan.gc.ca/n1/daily-quotidien/260130/dq260130a-eng.htm",
+      "table": "https://www150.statcan.gc.ca/n1/daily-quotidien/260130/t001a-eng.htm",
+      "series": {
+        "all": [
+          0,
+          0.5,
+          -0.1,
+          0.2,
+          -0.3,
+          0
+        ],
+        "goods": [
+          0.1,
+          1.3,
+          -0.2,
+          0.5,
+          -0.7,
+          -0.3
+        ],
+        "services": [
+          -0.1,
+          0.2,
+          0,
+          0.1,
+          -0.1,
+          0.1
+        ]
+      }
+    },
+    {
+      "published": "2026-02-27",
+      "month": "2025-12",
+      "article": "https://www150.statcan.gc.ca/n1/daily-quotidien/260227/dq260227b-eng.htm",
+      "table": "https://www150.statcan.gc.ca/n1/daily-quotidien/260227/t001b-eng.htm",
+      "series": {
+        "all": [
+          0.6,
+          -0.1,
+          0.2,
+          -0.3,
+          0,
+          0.2
+        ],
+        "goods": [
+          1.4,
+          -0.1,
+          0.4,
+          -0.8,
+          -0.3,
+          0.2
+        ],
+        "services": [
+          0.3,
+          0,
+          0.1,
+          -0.1,
+          0.2,
+          0.2
+        ]
+      }
+    },
+    {
+      "published": "2026-03-31",
+      "month": "2026-01",
+      "article": "https://www150.statcan.gc.ca/n1/daily-quotidien/260331/dq260331a-eng.htm",
+      "table": "https://www150.statcan.gc.ca/n1/daily-quotidien/260331/t001a-eng.htm",
+      "series": {
+        "all": [
+          -0.1,
+          0.2,
+          -0.3,
+          0,
+          0.2,
+          0.1
+        ],
+        "goods": [
+          -0.1,
+          0.3,
+          -0.7,
+          -0.3,
+          0.2,
+          0.2
+        ],
+        "services": [
+          0,
+          0.1,
+          -0.1,
+          0.2,
+          0.3,
+          0
+        ]
+      }
+    },
+    {
+      "published": "2026-04-30",
+      "month": "2026-02",
+      "article": "https://www150.statcan.gc.ca/n1/daily-quotidien/260430/dq260430a-eng.htm",
+      "table": "https://www150.statcan.gc.ca/n1/daily-quotidien/260430/t001a-eng.htm",
+      "series": {
+        "all": [
+          0.2,
+          -0.3,
+          0.1,
+          0.2,
+          0.1,
+          0.2
+        ],
+        "goods": [
+          0.4,
+          -0.7,
+          -0.2,
+          0.1,
+          0.4,
+          0.4
+        ],
+        "services": [
+          0.1,
+          -0.1,
+          0.2,
+          0.2,
+          0,
+          0.1
+        ]
+      }
+    },
+    {
+      "published": "2026-05-29",
+      "month": "2026-03",
+      "article": "https://www150.statcan.gc.ca/n1/daily-quotidien/260529/dq260529b-eng.htm",
+      "table": "https://www150.statcan.gc.ca/n1/daily-quotidien/260529/t001b-eng.htm",
+      "series": {
+        "all": [
+          -0.3,
+          0.1,
+          0.1,
+          0,
+          0.2,
+          -0.1
+        ],
+        "goods": [
+          -0.7,
+          -0.3,
+          -0.1,
+          -0.1,
+          0.2,
+          -0.8
+        ],
+        "services": [
+          -0.1,
+          0.2,
+          0.2,
+          0,
+          0.2,
+          0.1
+        ]
+      }
+    },
+    {
+      "published": "2026-06-30",
+      "month": "2026-04",
+      "article": "https://www150.statcan.gc.ca/n1/daily-quotidien/260630/dq260630a-eng.htm",
+      "table": "https://www150.statcan.gc.ca/n1/daily-quotidien/260630/t001a-eng.htm",
+      "series": {
+        "all": [
+          0.1,
+          0.1,
+          0,
+          0.2,
+          -0.1,
+          0.5
+        ],
+        "goods": [
+          -0.3,
+          -0.2,
+          -0.1,
+          0.1,
+          -0.7,
+          1.2
+        ],
+        "services": [
+          0.2,
+          0.2,
+          0,
+          0.2,
+          0.1,
+          0.3
+        ]
+      }
+    },
+    {
+      "published": "2026-07-31",
+      "month": "2026-05",
+      "article": "https://www150.statcan.gc.ca/n1/daily-quotidien/260731/dq260731a-eng.htm",
+      "table": "https://www150.statcan.gc.ca/n1/daily-quotidien/260731/t001a-eng.htm",
+      "series": {
+        "all": [
+          0.1,
+          0,
+          0.2,
+          -0.2,
+          0.6,
+          0.3
+        ],
+        "goods": [
+          -0.1,
+          -0.1,
+          0.2,
+          -0.7,
+          1.4,
+          0.6
+        ],
+        "services": [
+          0.2,
+          0,
+          0.2,
+          0.1,
+          0.2,
+          0.2
+        ]
+      }
+    },
+    {
+      "published": "2026-08-28",
+      "month": "2026-06",
+      "article": "https://www150.statcan.gc.ca/n1/daily-quotidien/260828/dq260828b-eng.htm",
+      "table": "https://www150.statcan.gc.ca/n1/daily-quotidien/260828/t001b-eng.htm",
+      "series": {
+        "all": [
+          0,
+          0.2,
+          -0.2,
+          0.6,
+          0.3,
+          0.3
+        ],
+        "goods": [
+          -0.1,
+          0.1,
+          -0.7,
+          1.5,
+          0.6,
+          -0.1
+        ],
+        "services": [
+          0,
+          0.2,
+          0.1,
+          0.3,
+          0.2,
+          0.4
+        ]
+      }
+    },
+    {
+      "published": "2026-09-29",
+      "month": "2026-07",
+      "article": "https://www150.statcan.gc.ca/n1/daily-quotidien/260929/dq260929a-eng.htm",
+      "table": "https://www150.statcan.gc.ca/n1/daily-quotidien/260929/t001a-eng.htm",
+      "series": {
+        "all": [
+          0.2,
+          -0.2,
+          0.6,
+          0.3,
+          0.4,
+          0
+        ],
+        "goods": [
+          0.1,
+          -0.7,
+          1.5,
+          0.5,
+          0.1,
+          0
+        ],
+        "services": [
+          0.2,
+          0.1,
+          0.3,
+          0.3,
+          0.5,
+          0
+        ]
+      }
+    },
+    {
+      "published": "2026-10-30",
+      "month": "2026-08",
+      "article": "https://www150.statcan.gc.ca/n1/daily-quotidien/261030/dq261030a-eng.htm",
+      "table": "https://www150.statcan.gc.ca/n1/daily-quotidien/261030/t001a-eng.htm",
+      "series": {
+        "all": [
+          -0.2,
+          0.6,
+          0.3,
+          0.4,
+          0,
+          0
+        ],
+        "goods": [
+          -0.7,
+          1.5,
+          0.6,
+          0,
+          0.2,
+          0.1
+        ],
+        "services": [
+          0.1,
+          0.3,
+          0.2,
+          0.5,
+          0,
+          -0.1
+        ]
+      }
+    }
+  ]
+}

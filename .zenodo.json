@@ -1,0 +1,10 @@
+{
+  "upload_type": "dataset",
+  "title": "Release Receipt: Canadian monthly GDP estimates by publication date",
+  "description": "Statistics Canada's archived monthly GDP by industry bulletins, organized by reference month, industry aggregate and publication date. Each release contains six month-over-month growth rates for each of three series. Source links and licence are included with the dataset under web/. Adapted from Statistics Canada; this does not constitute an endorsement by Statistics Canada.",
+  "creators": [{"name": "CoolCode"}],
+  "keywords": ["Canada", "GDP", "economic statistics", "real-time data", "data revisions"],
+  "access_right": "open",
+  "license": "other-open",
+  "related_identifiers": [{"identifier": "https://coolcode.ca/releasereceipt/", "relation": "isSupplementTo", "scheme": "url"}]
+}

@@ -1,0 +1,8 @@
+Release Receipt — data and attribution
+
+Adapted from Statistics Canada, The Daily, Monthly gross domestic product by industry at basic prices, seasonally adjusted. Reference months and publication dates are supplied per observation in receipts.csv and receipts.json. This does not constitute an endorsement by Statistics Canada of this product.
+
+Statistics Canada Open Licence
+https://www.statcan.gc.ca/en/terms-conditions/open-licence
+
+CoolCode compiled three industry aggregates, aligned the publication dates, and rounded negative zero to zero. Each source_table URL in the CSV identifies the exact published table. The rates and any derived comparison should be attributed to the source and compiler. Method, field definitions and coverage limitations are in README.md.

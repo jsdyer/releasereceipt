@@ -1,0 +1,42 @@
+name: Publish dataset release
+on:
+  push:
+    branches: [main]
+    paths: [dataset-version.txt]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'New version, e.g. 2026.11.22.1 (leave blank for dataset-version.txt)'
+        required: false
+permissions:
+  contents: write
+jobs:
+  publish:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    concurrency: dataset-release
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - name: Validate and package the tagged observations
+        run: |
+          python3 scripts/dataset.py
+          git diff --exit-code -- web/receipts.csv
+          python3 scripts/build.py
+          mkdir bundle
+          cp web/receipts.{csv,json} web/DATA-LICENCE.txt README.md bundle/
+          (cd bundle && sha256sum receipts.csv receipts.json > SHA256SUMS && zip -q ../release-receipt-dataset.zip *)
+      - name: Publish version
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ inputs.version }}
+        run: |
+          version="${VERSION:-$(cat dataset-version.txt)}"
+          [[ "$version" =~ ^20[0-9]{2}\.[0-9]{2}\.[0-9]{2}(\.[0-9]+)?$ ]]
+          tag="dataset-$version"
+          if gh release view "$tag" >/dev/null 2>&1; then
+            echo "Version already published. Use a new version to publish changed observations."
+            exit 0
+          fi
+          gh release create "$tag" release-receipt-dataset.zip --target "$GITHUB_SHA" --title "Release Receipt dataset · $version" --notes "Canadian GDP publication history. The bundle contains the tidy CSV, source-linked JSON, checksums, data dictionary and source licence."
