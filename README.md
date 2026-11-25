@@ -4,6 +4,7 @@
 
 <!-- coolcode:guide -->
 Choose a reference month and an industry group to see the six-month window of growth estimates printed in successive Statistics Canada bulletins. The tool measures the difference between the first regular table and the latest archived table in percentage points. Select a month in the revision ranking to see the dated evidence, or download the figures and their source links.
+Follow public CPI and earnings vectors or check an arbitrary public vector on your device. Observed vintages are append-only, so later revisions do not erase what was seen earlier. Followed series produce an official-date calendar export and public RSS links usable in Feed Harbour.
 <!-- /coolcode:guide -->
 
 For example, Canada's June 2026 growth was +0.3% in the August 28 release and +0.4% in the September 29 release. Each table describes that same June relative to May. More complete survey and administrative information and seasonal adjustment can change an estimate. As a result, a change to a historical estimate does not imply a second change in economic activity on the publication date.
@@ -59,3 +60,15 @@ Public GitHub repositories can have scheduled workflows disabled after 60 days o
 
 This is an interim mitigation, not a scheduling guarantee: GitHub does not document active-workflow renewal as a permanent exemption, and scheduled runs can be delayed or dropped. A scheduler on our own Linux server is the planned independent trigger. The guard does not collect data, create dummy commits, or change source/check timestamps; successful collection and published data freshness still need monitoring.
 <!-- /schedule-reliability -->
+
+## Personal StatCan watchlist
+
+The new panel retains observed vintages for 25 configured CPI and earnings series, including Canada, all ten provinces and explicitly labelled territorial-capital CPI. Published RSS is `https://coolcode.ca/releasereceipt/feed.xml`; per-series feeds use `feeds/v<VECTOR>.xml`. Copy one into Feed Harbour, or export the followed public feeds as OPML for a compatible reader. An initial-capture event is explicitly labelled; it is not falsely presented as the original release. Public history begins with the first collector capture. Changes outside the configured 36 latest periods cannot be detected, but already captured periods never expire.
+
+Follow/unfollow selections persist in `coolcode:releasereceipt:watchlist`. Any valid public vector can be checked with Statistics Canada's CORS-enabled Web Data Service. The request sends only its vector number; its successive manually checked vintages stay on the visitor's device. Custom vectors have no background scheduler, public feed or inferred calendar. Export/import JSON backs up follows and locally observed values. An imported file does not trigger source requests. Storage failures are reported and do not silently truncate history.
+
+The upcoming calendar is captured from the [official major economic release schedule JSON](https://www.statcan.gc.ca/en/developers/schedule-key_indicators-eng-json). Only configured title matches are associated with series. ICS exports use all-day dates and state the normal 08:30 Eastern release time; midnight markers in the source are ordering fields, not release times. Dates may change. Source release time, reference period and observed-at time are separately displayed. The API `issueDate` is not used as a release date because it is the cube's first publication date. Suppression/status symbols, source scale factors and units are preserved.
+
+### Expand or customize
+
+Edit `config/watchlist.json` to add a verified StatCan vector and its 8-digit table, clear label, exact geography, source unit and optional official calendar title prefix. Set `latest_periods` (1–240) and maximum series count; defaults do not cap visitor custom lookups. Use the [WDS guide](https://www.statcan.gc.ca/en/developers/wds/user-guide) and the source CSV's VECTOR column to verify each combination. Run `python scripts/watchlist.py`, test/build and commit its JSON/RSS output. Removed public vectors keep historical data/feed archives and are labelled inactive. A failed source/calendar validation stops before updating output. Scheduled collection remains Tuesday/Friday 17:31 UTC and includes the original GDP archive, vector watchlist and calendar. `watchlist.json.checked_at` independently probes this new collection. No API key or Worker change is required.

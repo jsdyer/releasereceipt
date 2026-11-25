@@ -6,6 +6,9 @@ on:
   schedule:
     - cron: '31 17 * * 2,5'
   workflow_dispatch:
+concurrency:
+  group: releasereceipt-publication
+  cancel-in-progress: false
 permissions:
   contents: read
 jobs:
@@ -31,6 +34,7 @@ jobs:
         run: |
           python3 scripts/refresh.py
           python3 scripts/dataset.py
+          python3 scripts/watchlist.py
       - name: Test the application
         run: node --test tests/*.test.mjs
       - name: Test the builder
@@ -58,9 +62,9 @@ jobs:
       - name: Save verified source snapshot
         if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main'
         run: |
-          git add web/receipts.json web/receipts.csv
+          git add web/receipts.json web/receipts.csv web/watchlist.json web/calendar.json web/feed.xml web/feeds
           if ! git diff --cached --quiet; then
-            git -c user.name=github-actions -c user.email=41898282+github-actions[bot]@users.noreply.github.com commit -m "Refresh Statistics Canada GDP release archive"
+            git -c user.name=github-actions -c user.email=41898282+github-actions[bot]@users.noreply.github.com commit -m "Refresh Statistics Canada release and observed-vintage archives"
             git push origin HEAD:main
           fi
       - name: Save browser screenshots

@@ -1,0 +1,232 @@
+{
+  "latest_periods": 36,
+  "max_series": 100,
+  "series": [
+    {
+      "vector": 41690973,
+      "table": "18100004",
+      "label": "All-items CPI \u00b7 Canada",
+      "geography": "Canada",
+      "unit": "2002=100",
+      "calendar_match": "Consumer Price Index",
+      "default_follow": true
+    },
+    {
+      "vector": 41691244,
+      "table": "18100004",
+      "label": "All-items CPI \u00b7 Newfoundland and Labrador",
+      "geography": "Newfoundland and Labrador",
+      "unit": "2002=100",
+      "calendar_match": "Consumer Price Index",
+      "default_follow": false
+    },
+    {
+      "vector": 41691379,
+      "table": "18100004",
+      "label": "All-items CPI \u00b7 Prince Edward Island",
+      "geography": "Prince Edward Island",
+      "unit": "2002=100",
+      "calendar_match": "Consumer Price Index",
+      "default_follow": false
+    },
+    {
+      "vector": 41691513,
+      "table": "18100004",
+      "label": "All-items CPI \u00b7 Nova Scotia",
+      "geography": "Nova Scotia",
+      "unit": "2002=100",
+      "calendar_match": "Consumer Price Index",
+      "default_follow": true
+    },
+    {
+      "vector": 41691648,
+      "table": "18100004",
+      "label": "All-items CPI \u00b7 New Brunswick",
+      "geography": "New Brunswick",
+      "unit": "2002=100",
+      "calendar_match": "Consumer Price Index",
+      "default_follow": false
+    },
+    {
+      "vector": 41691783,
+      "table": "18100004",
+      "label": "All-items CPI \u00b7 Quebec",
+      "geography": "Quebec",
+      "unit": "2002=100",
+      "calendar_match": "Consumer Price Index",
+      "default_follow": false
+    },
+    {
+      "vector": 41691919,
+      "table": "18100004",
+      "label": "All-items CPI \u00b7 Ontario",
+      "geography": "Ontario",
+      "unit": "2002=100",
+      "calendar_match": "Consumer Price Index",
+      "default_follow": false
+    },
+    {
+      "vector": 41692055,
+      "table": "18100004",
+      "label": "All-items CPI \u00b7 Manitoba",
+      "geography": "Manitoba",
+      "unit": "2002=100",
+      "calendar_match": "Consumer Price Index",
+      "default_follow": false
+    },
+    {
+      "vector": 41692191,
+      "table": "18100004",
+      "label": "All-items CPI \u00b7 Saskatchewan",
+      "geography": "Saskatchewan",
+      "unit": "2002=100",
+      "calendar_match": "Consumer Price Index",
+      "default_follow": false
+    },
+    {
+      "vector": 41692327,
+      "table": "18100004",
+      "label": "All-items CPI \u00b7 Alberta",
+      "geography": "Alberta",
+      "unit": "2002=100",
+      "calendar_match": "Consumer Price Index",
+      "default_follow": false
+    },
+    {
+      "vector": 41692462,
+      "table": "18100004",
+      "label": "All-items CPI \u00b7 British Columbia",
+      "geography": "British Columbia",
+      "unit": "2002=100",
+      "calendar_match": "Consumer Price Index",
+      "default_follow": true
+    },
+    {
+      "vector": 41692598,
+      "table": "18100004",
+      "label": "All-items CPI \u00b7 Whitehorse, Yukon",
+      "geography": "Whitehorse, Yukon",
+      "unit": "2002=100",
+      "calendar_match": "Consumer Price Index",
+      "default_follow": false
+    },
+    {
+      "vector": 41692722,
+      "table": "18100004",
+      "label": "All-items CPI \u00b7 Yellowknife, Northwest Territories",
+      "geography": "Yellowknife, Northwest Territories",
+      "unit": "2002=100",
+      "calendar_match": "Consumer Price Index",
+      "default_follow": false
+    },
+    {
+      "vector": 41713432,
+      "table": "18100004",
+      "label": "All-items CPI \u00b7 Iqaluit, Nunavut",
+      "geography": "Iqaluit, Nunavut",
+      "unit": "2002=100",
+      "calendar_match": "Consumer Price Index",
+      "default_follow": false
+    },
+    {
+      "vector": 79311153,
+      "table": "14100223",
+      "label": "Average weekly earnings \u00b7 Canada",
+      "geography": "Canada",
+      "unit": "Dollars",
+      "calendar_match": "Payroll employment, earnings and hours",
+      "default_follow": true
+    },
+    {
+      "vector": 79311179,
+      "table": "14100223",
+      "label": "Average weekly earnings \u00b7 Newfoundland and Labrador",
+      "geography": "Newfoundland and Labrador",
+      "unit": "Dollars",
+      "calendar_match": "Payroll employment, earnings and hours",
+      "default_follow": false
+    },
+    {
+      "vector": 79311205,
+      "table": "14100223",
+      "label": "Average weekly earnings \u00b7 Prince Edward Island",
+      "geography": "Prince Edward Island",
+      "unit": "Dollars",
+      "calendar_match": "Payroll employment, earnings and hours",
+      "default_follow": false
+    },
+    {
+      "vector": 79311231,
+      "table": "14100223",
+      "label": "Average weekly earnings \u00b7 Nova Scotia",
+      "geography": "Nova Scotia",
+      "unit": "Dollars",
+      "calendar_match": "Payroll employment, earnings and hours",
+      "default_follow": true
+    },
+    {
+      "vector": 79311257,
+      "table": "14100223",
+      "label": "Average weekly earnings \u00b7 New Brunswick",
+      "geography": "New Brunswick",
+      "unit": "Dollars",
+      "calendar_match": "Payroll employment, earnings and hours",
+      "default_follow": false
+    },
+    {
+      "vector": 79311283,
+      "table": "14100223",
+      "label": "Average weekly earnings \u00b7 Quebec",
+      "geography": "Quebec",
+      "unit": "Dollars",
+      "calendar_match": "Payroll employment, earnings and hours",
+      "default_follow": false
+    },
+    {
+      "vector": 79311309,
+      "table": "14100223",
+      "label": "Average weekly earnings \u00b7 Ontario",
+      "geography": "Ontario",
+      "unit": "Dollars",
+      "calendar_match": "Payroll employment, earnings and hours",
+      "default_follow": false
+    },
+    {
+      "vector": 79311335,
+      "table": "14100223",
+      "label": "Average weekly earnings \u00b7 Manitoba",
+      "geography": "Manitoba",
+      "unit": "Dollars",
+      "calendar_match": "Payroll employment, earnings and hours",
+      "default_follow": false
+    },
+    {
+      "vector": 79311361,
+      "table": "14100223",
+      "label": "Average weekly earnings \u00b7 Saskatchewan",
+      "geography": "Saskatchewan",
+      "unit": "Dollars",
+      "calendar_match": "Payroll employment, earnings and hours",
+      "default_follow": false
+    },
+    {
+      "vector": 79311387,
+      "table": "14100223",
+      "label": "Average weekly earnings \u00b7 Alberta",
+      "geography": "Alberta",
+      "unit": "Dollars",
+      "calendar_match": "Payroll employment, earnings and hours",
+      "default_follow": false
+    },
+    {
+      "vector": 79311413,
+      "table": "14100223",
+      "label": "Average weekly earnings \u00b7 British Columbia",
+      "geography": "British Columbia",
+      "unit": "Dollars",
+      "calendar_match": "Payroll employment, earnings and hours",
+      "default_follow": true
+    }
+  ],
+  "calendar_url": "https://www150.statcan.gc.ca/n1/dai-quo/ssi/homepage/schedule-key_indicators-eng.json"
+}

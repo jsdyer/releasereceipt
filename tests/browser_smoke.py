@@ -3,6 +3,7 @@ from functools import partial
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 import os
+import json
 import shutil
 import tempfile
 import threading
@@ -40,6 +41,31 @@ def main():
                     page.locator("#download").click()
                 assert pending.value.suggested_filename == "gdp-2026-06-goods.csv"
                 page.locator("#ranking button").first.click()
+                page.locator("#watch-cards article").first.wait_for()
+                assert page.locator("#watch-cards article").count() >= 25
+                page.locator("#watch-search").fill("Nova Scotia")
+                assert page.locator("#watch-cards article").count() == 2
+                page.locator("#watch-cards button", has_text="View observations").first.click()
+                assert page.locator("#watch-history tbody tr").count() >= 36
+                with page.expect_download() as calendar:
+                    page.locator("#watch-ics").click()
+                assert calendar.value.suggested_filename.endswith(".ics")
+                page.locator("summary", has_text="Add a public vector").click()
+                info=[{"status":"SUCCESS","object":{"responseStatusCode":0,"productId":18100004,"vectorId":999999999,"SeriesTitleEn":"Additional test vector","memberUomCode":17}}]
+                points=[{"status":"SUCCESS","object":{"responseStatusCode":0,"vectorId":999999999,"vectorDataPoint":[{"refPer":"2026-01-01","value":123,"releaseTime":"2026-02-01T08:30","scalarFactorCode":0,"decimals":1,"symbolCode":3,"statusCode":0,"securityLevelCode":0,"frequencyCode":6}]}}]
+                page.route("**/getSeriesInfoFromVector",lambda route:route.fulfill(content_type="application/json",body=json.dumps(info)))
+                page.route("**/getDataFromVectorsAndLatestNPeriods",lambda route:route.fulfill(content_type="application/json",body=json.dumps(points)))
+                page.locator("#custom-vector").fill("v999999999")
+                page.locator("#watch-custom").click()
+                page.wait_for_function("document.getElementById('watch-status').textContent.includes('Saved v999999999')")
+                page.reload()
+                page.locator("#watch-search").fill("Additional test vector")
+                page.locator("#watch-cards article").first.wait_for()
+                assert "123" in page.locator("#watch-cards").inner_text()
+                assert "revised" in page.locator("#watch-cards").inner_text()
+                with page.expect_download() as backup:
+                    page.locator("#watch-export").click()
+                assert backup.value.suggested_filename.endswith(".json")
                 page.screenshot(path=str(screenshots / "desktop.png"), full_page=True)
                 page.set_viewport_size({"width": 390, "height": 844})
                 assert page.evaluate("document.documentElement.scrollWidth <= window.innerWidth")

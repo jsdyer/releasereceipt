@@ -1,13 +1,18 @@
 {
   "id": "releasereceipt",
   "title": "Release Receipt",
-  "description": "See how Canada's monthly GDP growth estimates changed across Statistics Canada releases.",
+  "description": "Follow Statistics Canada releases, watch series and inspect changes to previously published values.",
   "category": "money",
   "tags": [
     "GDP",
     "Statistics Canada",
     "economic data",
-    "revisions"
+    "revisions",
+    "CPI",
+    "earnings",
+    "watchlist",
+    "RSS",
+    "calendar"
   ],
   "icon": "receipt-text",
   "url": "/releasereceipt/",
@@ -16,7 +21,7 @@
   "access": "browser",
   "data_info": {
     "mode": "snapshot",
-    "detail": "Statistics Canada’s archived monthly GDP tables show what each release reported for the same month.",
+    "detail": "Archived GDP bulletins, StatCan vector observations and the official release calendar separate publication, reference and capture dates.",
     "cadence": "Twice weekly",
     "probes": [
       {
@@ -32,6 +37,13 @@
           "measure": "length",
           "unit": "release bulletins"
         }
+      },
+      {
+        "url": "https://coolcode.ca/releasereceipt/watchlist.json",
+        "path": [
+          "checked_at"
+        ],
+        "label": "Watchlist checked"
       }
     ]
   }
