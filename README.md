@@ -4,7 +4,7 @@
 
 <!-- coolcode:guide -->
 Choose a reference month and an industry group to see the six-month window of growth estimates printed in successive Statistics Canada bulletins. The tool measures the difference between the first regular table and the latest archived table in percentage points. Select a month in the revision ranking to see the dated evidence, or download the figures and their source links.
-Follow public CPI and earnings vectors or check an arbitrary public vector on your device. Observed vintages are append-only, so later revisions do not erase what was seen earlier. Followed series produce an official-date calendar export and public RSS links usable in Feed Harbour.
+Follow public CPI and earnings vectors or check an arbitrary public vector on your device. Observed vintages are append-only, so later revisions do not erase what was seen earlier. Configured public series have RSS links usable in Feed Harbour and official calendar dates where a release match is available. Custom vectors keep manually checked observations on your device, without a hosted RSS feed or inferred calendar.
 <!-- /coolcode:guide -->
 
 For example, Canada's June 2026 growth was +0.3% in the August 28 release and +0.4% in the September 29 release. Each table describes that same June relative to May. More complete survey and administrative information and seasonal adjustment can change an estimate. As a result, a change to a historical estimate does not imply a second change in economic activity on the publication date.
@@ -58,7 +58,7 @@ Adapted from Statistics Canada, The Daily, Monthly gross domestic product by ind
 
 Public GitHub repositories can have scheduled workflows disabled after 60 days of inactivity. A separate weekly [schedule guard](.github/workflows/schedule-guard.yml) calls GitHub's enable-workflow API for an explicit list of refresh workflows and itself. It can restore workflows disabled for inactivity, preserves manually disabled workflows, and runs independently of collection failures.
 
-This is an interim mitigation, not a scheduling guarantee: GitHub does not document active-workflow renewal as a permanent exemption, and scheduled runs can be delayed or dropped. A scheduler on our own Linux server is the planned independent trigger. The guard does not collect data, create dummy commits, or change source/check timestamps; successful collection and published data freshness still need monitoring.
+This is an interim mitigation, not a scheduling guarantee: GitHub does not document active-workflow renewal as a permanent exemption, and scheduled runs can be delayed or dropped. The independent watchdog uses the centrally maintained [scheduler registry](https://github.com/jsdyer/jsdyer.github.io/tree/main/data/operations). An installed watchdog automatically downloads registry updates; its deployment and runtime health must be checked separately. The guard does not collect data, create dummy commits, or change source/check timestamps; successful collection and published data freshness still need monitoring.
 <!-- /schedule-reliability -->
 
 ## Personal StatCan watchlist
