@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     concurrency: dataset-release
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
         with:
           persist-credentials: false
       - name: Validate and package the tagged observations
