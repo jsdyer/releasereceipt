@@ -18,6 +18,8 @@ async function init() {
     const latest = rows.at(-1);
     const diff = revision(rows);
     get('selection').textContent = monthName(key)+' · '+sectors[get('sector').value];
+    get('first-date').textContent = first?.published || '';
+    get('latest-date').textContent = latest.published;
     get('first').textContent = first ? rate(first.value) : 'Outside archive';
     get('latest').textContent = rate(latest.value);
     get('difference').textContent = diff === null ? '—' : signed(diff)+' pp';

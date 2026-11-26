@@ -63,11 +63,19 @@ def main():
                 page.locator("#watch-cards article").first.wait_for()
                 assert "123" in page.locator("#watch-cards").inner_text()
                 assert "revised" in page.locator("#watch-cards").inner_text()
+                page.locator("summary", has_text="Backup and RSS options").click()
                 with page.expect_download() as backup:
                     page.locator("#watch-export").click()
                 assert backup.value.suggested_filename.endswith(".json")
                 page.screenshot(path=str(screenshots / "desktop.png"), full_page=True)
                 page.set_viewport_size({"width": 390, "height": 844})
+                page.goto(f"http://127.0.0.1:{server.server_port}/example-tool/")
+                page.locator("#first-date").wait_for()
+                assert page.locator("#month").bounding_box()["y"] < 844
+                assert page.locator("#first-date").bounding_box()["y"] < 844
+                assert page.locator("#latest-date").inner_text() == page.locator("#ledger tr").last.locator("td").first.inner_text()
+                page.get_by_role("link", name="Find a CPI or earnings series").click()
+                assert page.locator("#watch-search").evaluate("el => document.activeElement === el")
                 assert page.evaluate("document.documentElement.scrollWidth <= window.innerWidth")
                 page.screenshot(path=str(screenshots / "mobile.png"), full_page=True)
                 assert not errors, errors
